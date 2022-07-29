@@ -1,4 +1,4 @@
-# API Rest de livros
+# :books: API Rest de livros
 
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=CONCLUÍDO&color=GREEN&style=for-the-badge)
 
@@ -23,7 +23,7 @@ Toda vez que o projeto sobe, está configurado para que os dados no banco de dad
 | Postman      | ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)                    |
 |              |                                                                                                                             |
 
-## :tada: Instalção
+## :hammer_and_wrench: Instalção
 
 Foi escolhida para desenvolvimento e testes a plataforma [Spring Tool Suite](https://spring.io/tools). Para executar o projeto, recomendo o uso da mesma.
 
@@ -192,7 +192,7 @@ Importar collection
 }
 ```
 
-## :tada: Endpoints
+## :end: :green_circle:	:green_circle:	 Endpoints
 
 | HTTP Method | Endpoint   |
 |-------------|------------|
@@ -202,9 +202,118 @@ Importar collection
 | `POST`      | /book      |
 | `PUT`       | /book/{id} |
 
-## :tada: Resultados
+## :mechanical_arm: Resultados
 
-Stickers gerados com o projeto:
+`GET` http://localhost:8080/book/50
 
-Poster, legenda contendo avaliação obtida da API e foto pessoal de acordo com nota.
+```json
+{
+    "id": 50,
+    "name": "Em Algum Lugar nas Estrelas",
+    "authorName": "Clare Vanderpool",
+    "pages": 288,
+    "genre": "Livros de Fantasia e Terror para Adolescentes"
+}
+```
+
+`GET` http://localhost:8080/book?page=5
+
+```json
+{
+    "content": [
+        {
+            "id": 53,
+            "name": "Um Lugar Bem Longe Daqui",
+            "authorName": "Delia Owens",
+            "pages": 336,
+            "genre": "Drama Literatura e Ficção"
+        }
+    ],
+    "pageable": {
+        "sort": {
+            "sorted": true,
+            "empty": false,
+            "unsorted": false
+        },
+        "pageNumber": 5,
+        "pageSize": 3,
+        "offset": 15,
+        "paged": true,
+        "unpaged": false
+    },
+    "last": true,
+    "totalPages": 6,
+    "totalElements": 16,
+    "first": false,
+    "size": 3,
+    "number": 5,
+    "sort": {
+        "sorted": true,
+        "empty": false,
+        "unsorted": false
+    },
+    "numberOfElements": 1,
+    "empty": false
+}
+```
+
+
+`DELETE` http://localhost:8080/book/10
+
+```json
+Book not found!
+```
+
+`DELETE` http://localhost:8080/book/50
+
+```json
+Book deleted sucessfully!
+```
+
+`POST` http://localhost:8080/book
+
+Request Body:
+```json
+{
+    "name": "Game of Thronnes 13",
+    "authorName": "Martin",
+    "pages": 222,
+    "genre": "Fantasia"
+}
+```
+Response Body
+```json
+{
+    "id": 1,
+    "name": "Game of Thronnes 13",
+    "authorName": "Martin",
+    "pages": 222,
+    "genre": "Fantasia"
+}
+```
+
+`PUT` http://localhost:8080/book/1
+
+Request Body
+
+```json
+{
+    "name": "Game of Thrones 2",
+    "authorName": "Martin",
+    "pages": 1213,
+    "genre": "Fantasia"
+}
+```
+Response Body
+
+```json
+{
+    "id": 1,
+    "name": "Game of Thrones 2",
+    "authorName": "Martin",
+    "pages": 1213,
+    "genre": "Fantasia"
+}
+```
+
 
