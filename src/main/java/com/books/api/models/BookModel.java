@@ -18,12 +18,16 @@ public class BookModel implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	
 	@Column(nullable = false, unique = true, length = 50)
 	private String name;
+	
 	@Column(nullable = false, length = 100)
 	private String authorName;
+	
 	@Column(nullable = false)
 	private int pages;
+	
 	@Column(nullable = false, length = 50)
 	private String genre;
 	
