@@ -34,4 +34,10 @@ public class BookService {
 		return bookRepository.findById(id);
 	}
 
+	@Transactional
+	public void delete(Long id) {
+		bookRepository.deleteById(id);
+		
+	}
+
 }
